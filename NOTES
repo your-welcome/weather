@@ -1,0 +1,10 @@
+user functionality:
+register user
+login
+add zip code
+remove zip code
+
+database:
+store user
+store multiple zip codes per user
+cache weather data for one hour
