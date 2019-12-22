@@ -1,0 +1,15 @@
+
+{% block content %}
+
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    {{ form.user.label }} {{ form.user(size=20) }}
+    <br>
+    {{ form.password.label }} {{ form.password(size=20) }}
+    <br>
+    {{ form.zipcode.label }} {{ form.zipcode(size=5) }}
+    <br>
+    {{ form.submit() }}
+</form>
+
+{% endblock %}

@@ -8,3 +8,5 @@ database:
 store user
 store multiple zip codes per user
 cache weather data for one hour
+
+flaskwtf
