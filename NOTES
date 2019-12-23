@@ -10,3 +10,6 @@ store multiple zip codes per user
 cache weather data for one hour
 
 flaskwtf
+flask-sqlalchemy
+flask_login
+requests

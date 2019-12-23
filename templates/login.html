@@ -1,6 +1,14 @@
 {% extends 'theme.html' %}
 {% block content %}
 
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
 <form method="POST" action="">
     {{ form.hidden_tag() }}
     {{ form.user.label }} {{ form.user(size=20) }}
@@ -9,5 +17,7 @@
     <br>
     {{ form.submit() }}
 </form>
+
+<a href="/register">Click here to register</a>
 
 {% endblock %}

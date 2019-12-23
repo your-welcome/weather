@@ -1,0 +1,22 @@
+{% extends 'theme.html' %}
+
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+    display weather {{ zipcode }}
+    <br>
+    {{ weather_data }}
+    <br>
+    {{ weather_data['city'] }}
+    <br>
+    {{ weather_data['description'] }}
+    <br>
+    {{ weather_data['temp'] }}
+    <br>
+    {{ weather_data['humidity'] }}
+{% else %}
+    login or register
+{% endif %}
+
+{% endblock %}
