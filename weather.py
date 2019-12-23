@@ -37,8 +37,7 @@ def display_weather():
             "description" : r['weather'][0]['description']
         }
         return render_template('weather.html', title='Weather', weather_data = weather_data, date=date)
-    else:
-        return render_template('weather.html', title='Weather')
+    return render_template('weather.html', title='Weather')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():

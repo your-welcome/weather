@@ -13,6 +13,7 @@
               <div class="col-sm">
                 <h3>
                     Current Conditions: 
+                    <br>
                     <small class="text-muted">{{ weather_data['description'] }}</small>
                 </h3>
                 <h3>
@@ -27,11 +28,11 @@
 </div>
 
 {% else %}
-    <div class="jumbotron">
+    <div class="jumbotron bg-light">
         <h1 class="display-4">Check the Weather!</h1>
-        <p class="lead">Register for an account to look up the weather in your area using your zipcode.</p>
+        <p class="lead"><a href='/register' class="text-secondary">Register</a> for an account to look up the weather in your area using your zipcode.</p>
         <hr class="my-4">
-        <p>If you already have an account, please <a href='/login' class="text-secondary">Login</a>.</p>
+        If you already have an account, please <a href='/login' class="text-secondary">Login</a>.
     </div>
 {% endif %}
 
