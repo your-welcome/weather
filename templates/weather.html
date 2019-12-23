@@ -1,22 +1,38 @@
 {% extends 'theme.html' %}
-
-
 {% block content %}
 
 {% if current_user.is_authenticated %}
-    display weather {{ zipcode }}
-    <br>
-    {{ weather_data }}
-    <br>
-    {{ weather_data['city'] }}
-    <br>
-    {{ weather_data['description'] }}
-    <br>
-    {{ weather_data['temp'] }}
-    <br>
-    {{ weather_data['humidity'] }}
+<div class="card">
+    <h5 class="card-header">{{ weather_data['city'] }} - {{ date }}</h5>
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                    <h1 class="display-1">{{ weather_data['temp'] }}°F</h1>
+              </div>
+              <div class="col-sm">
+                <h3>
+                    Current Conditions: 
+                    <small class="text-muted">{{ weather_data['description'] }}</small>
+                </h3>
+                <h3>
+                    Humidity: 
+                    <br>
+                    <small class="text-muted">{{ weather_data['humidity'] }} %</small>
+                </h3>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
 {% else %}
-    login or register
+    <div class="jumbotron">
+        <h1 class="display-4">Check the Weather!</h1>
+        <p class="lead">Register for an account to look up the weather in your area using your zipcode.</p>
+        <hr class="my-4">
+        <p>If you already have an account, please <a href='/login' class="text-secondary">Login</a>.</p>
+    </div>
 {% endif %}
 
 {% endblock %}

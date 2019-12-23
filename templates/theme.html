@@ -12,7 +12,6 @@
   </head>
 
   <body>
-
     <nav class="navbar navbar-expand-md">
       <a class="navbar-brand text-light" href="/">Weather</a>
       <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -38,6 +37,16 @@
 
     <main role="main" class="container">
       <br>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category,message in messages %}
+          <div class="alert alert-{{ category }}" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+      {% endif %}
+      {% endwith %}
+      
       {% block content %}{% endblock %}
 
     </main><!-- /.container -->

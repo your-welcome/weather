@@ -1,23 +1,22 @@
 {% extends 'theme.html' %}
 {% block content %}
 
-{% with messages = get_flashed_messages() %}
-{% if messages %}
-    {% for message in messages %}
-        {{ message }}
-    {% endfor %}
-{% endif %}
-{% endwith %}
-
-<form method="POST" action="">
-    {{ form.hidden_tag() }}
-    {{ form.user.label }} {{ form.user(size=20) }}
-    <br>
-    {{ form.password.label }} {{ form.password(size=20) }}
-    <br>
-    {{ form.submit() }}
-</form>
-
-<a href="/register">Click here to register</a>
+<div class="card">
+    <h5 class="card-header">Login</h5>
+    <div class="card-body">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.user.label(class='form-control-label') }}
+                {{ form.user(class='form-control') }}
+            </div>
+            <div class="form-group">
+                {{ form.password.label(class='form-control-label') }}
+                {{ form.password(class='form-control') }}
+            </div>
+            {{ form.submit(class="btn btn-secondary") }}
+          </form>
+    </div>
+</div>
 
 {% endblock %}
